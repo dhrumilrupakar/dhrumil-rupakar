@@ -1,0 +1,696 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhrumil Rupakar - Cybersecurity Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'cyber-green': '#00FF41',
+                        'cyber-blue': '#00D4FF',
+                        'dark-gray': '#111111',
+                        'darker-gray': '#0a0a0a',
+                    },
+                    animation: {
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'fadeInUp': 'fadeInUp 0.6s ease-out',
+                        'slideInLeft': 'slideInLeft 0.8s ease-out',
+                        'slideInRight': 'slideInRight 0.8s ease-out',
+                        'typewriter': 'typewriter 3s steps(40) 1s infinite alternate',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 5px #00FF41, 0 0 10px #00FF41, 0 0 15px #00FF41' },
+                            '100%': { boxShadow: '0 0 10px #00FF41, 0 0 20px #00FF41, 0 0 30px #00FF41' }
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        typewriter: {
+                            '0%': { width: '0%' },
+                            '50%': { width: '100%' },
+                            '100%': { width: '0%' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(45deg, #00FF41, #00D4FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .cyber-glow {
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+        }
+        .cyber-glow-blue {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+        .terminal-border {
+            border: 1px solid #00FF41;
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+        }
+        .project-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #111111, #1a1a1a);
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 255, 65, 0.2);
+        }
+        .skill-bar {
+            background: linear-gradient(90deg, #00FF41, #00D4FF);
+            height: 4px;
+            border-radius: 2px;
+        }
+        .floating-nav {
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(0, 255, 65, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-poppins overflow-x-hidden">
+    <!-- @COMPONENT: FloatingNavigation -->
+    <nav class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 floating-nav rounded-full px-6 py-3">
+        <div class="flex space-x-6">
+            <a href="#home" class="text-sm hover:text-cyber-green transition-colors">Home</a>
+            <a href="#about" class="text-sm hover:text-cyber-green transition-colors">About</a>
+            <a href="#projects" class="text-sm hover:text-cyber-green transition-colors">Projects</a>
+            <a href="#skills" class="text-sm hover:text-cyber-green transition-colors">Skills</a>
+            <a href="#certifications" class="text-sm hover:text-cyber-green transition-colors">Certs</a>
+            <a href="#contact" class="text-sm hover:text-cyber-green transition-colors">Contact</a>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: FloatingNavigation -->
+
+    <!-- @COMPONENT: HeroSection -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative">
+        <!-- Cyber grid background pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="grid grid-cols-12 grid-rows-12 h-full w-full">
+                <!-- Grid lines -->
+                <div class="col-span-12 row-span-12 border border-cyber-green opacity-20"></div>
+            </div>
+        </div>
+        
+        <div class="container mx-auto px-4 text-center z-10">
+            <div class="animate-fadeInUp">
+                <h1 class="text-6xl md:text-8xl font-bold mb-6">
+                    <span class="gradient-text">Dhrumil Rupakar</span>
+                </h1>
+                <div class="text-xl md:text-2xl mb-4 text-gray-300">
+                    <span class="cyber-glow px-2 py-1 rounded">Cybersecurity</span>
+                    <span class="mx-2 text-cyber-blue">|</span>
+                    <span class="cyber-glow-blue px-2 py-1 rounded">Networking</span>
+                    <span class="mx-2 text-cyber-green">|</span>
+                    <span class="cyber-glow px-2 py-1 rounded">Cloud</span>
+                </div>
+                <p class="text-lg md:text-xl max-w-4xl mx-auto mb-8 text-gray-400 leading-relaxed">
+                    Building secure systems, detecting threats, and optimizing cloud infrastructure for a safer digital world.
+                </p>
+                <button class="bg-gradient-to-r from-cyber-green to-cyber-blue text-black px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-transform cyber-glow">
+                    <i class="fas fa-terminal mr-2"></i>View My Work
+                </button>
+            </div>
+        </div>
+
+        <!-- Floating particles -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-2 h-2 bg-cyber-green rounded-full animate-ping"></div>
+            <div class="absolute top-3/4 right-1/4 w-1 h-1 bg-cyber-blue rounded-full animate-ping" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-cyber-green rounded-full animate-ping" style="animation-delay: 2s;"></div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroSection -->
+
+    <!-- @COMPONENT: AboutSection -->
+    <section id="about" class="py-20 bg-gradient-to-b from-black to-darker-gray">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-slideInLeft">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">About Me</h2>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        I'm an Information Technology student at <span class="text-cyber-green">Seneca Polytechnic</span> with hands-on experience in threat detection, incident response, vulnerability management, and cloud infrastructure.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed mb-8">
+                        I have built enterprise-level homelabs, deployed secure network architectures, and worked on real-world simulations of cyberattacks. I thrive in solving complex technical challenges and continuously expanding my skills in cybersecurity, cloud computing, and networking.
+                    </p>
+                    
+                    <!-- Key Achievements -->
+                    <div class="space-y-4">
+                        <div class="terminal-border rounded-lg p-4">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-trophy text-cyber-green mr-3"></i>
+                                <span class="font-semibold">President's Honor List x2</span>
+                            </div>
+                            <p class="text-sm text-gray-400">Summer 2024, Winter 2025</p>
+                        </div>
+                        
+                        <div class="terminal-border rounded-lg p-4">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-shield-alt text-cyber-blue mr-3"></i>
+                                <span class="font-semibold">Cybersecurity Virtual Experience</span>
+                            </div>
+                            <p class="text-sm text-gray-400">Mastercard</p>
+                        </div>
+                        
+                        <div class="terminal-border rounded-lg p-4">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-cloud text-cyber-green mr-3"></i>
+                                <span class="font-semibold">AWS & Azure Solutions</span>
+                            </div>
+                            <p class="text-sm text-gray-400">Implementation and security automation</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="animate-slideInRight">
+                    <!-- Professional stats dashboard -->
+                    <div class="bg-dark-gray rounded-xl p-6 terminal-border">
+                        <h3 class="text-xl font-semibold mb-4 gradient-text">
+                            <i class="fas fa-chart-line mr-2"></i>Professional Metrics
+                        </h3>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-cyber-green">50+</div>
+                                <div class="text-sm text-gray-400">Vulnerability Scans</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-cyber-blue">90%</div>
+                                <div class="text-sm text-gray-400">Critical Findings Closed</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-cyber-green">10K+</div>
+                                <div class="text-sm text-gray-400">Daily Logs Monitored</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-cyber-blue">60%</div>
+                                <div class="text-sm text-gray-400">Attack Surface Reduced</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: AboutSection -->
+
+    <!-- @COMPONENT: ProjectsSection -->
+    <section id="projects" class="py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center gradient-text">
+                <i class="fas fa-code mr-3"></i>Projects
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card rounded-xl p-6 terminal-border">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-network-wired text-cyber-green text-2xl mr-3"></i>
+                        <h3 class="text-xl font-semibold">Cybersecurity Homelab Project</h3>
+                    </div>
+                    
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Designed and deployed an enterprise-like virtual environment with Windows Server, Kali Linux, and Ubuntu to simulate real-world cyber threats and defenses.
+                    </p>
+                    
+                    <div class="space-y-2 mb-4">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">Infrastructure:</span>
+                            <span class="text-cyber-green">pfSense, VPN, ACLs</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">Monitoring:</span>
+                            <span class="text-cyber-blue">Splunk SIEM</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">Scanning:</span>
+                            <span class="text-cyber-green">Nessus Vulnerability Assessment</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-cyber-green bg-opacity-20 text-cyber-green text-xs rounded">VMware</span>
+                        <span class="px-2 py-1 bg-cyber-blue bg-opacity-20 text-cyber-blue text-xs rounded">Splunk</span>
+                        <span class="px-2 py-1 bg-cyber-green bg-opacity-20 text-cyber-green text-xs rounded">Nessus</span>
+                        <span class="px-2 py-1 bg-cyber-blue bg-opacity-20 text-cyber-blue text-xs rounded">pfSense</span>
+                    </div>
+                    
+                    <div class="flex space-x-3">
+                        <button class="flex-1 bg-cyber-green bg-opacity-20 text-cyber-green px-4 py-2 rounded hover:bg-opacity-30 transition-colors">
+                            <i class="fab fa-github mr-2"></i>View Code
+                        </button>
+                        <button class="flex-1 bg-cyber-blue bg-opacity-20 text-cyber-blue px-4 py-2 rounded hover:bg-opacity-30 transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card rounded-xl p-6 terminal-border">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-bug text-cyber-blue text-2xl mr-3"></i>
+                        <h3 class="text-xl font-semibold">RFI to RCE Attack Simulation</h3>
+                    </div>
+                    
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Executed a controlled RFI-to-RCE exploit in DVWA within a sandboxed Linux-Windows environment to demonstrate attack vectors and defense mechanisms.
+                    </p>
+                    
+                    <div class="space-y-2 mb-4">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">Environment:</span>
+                            <span class="text-cyber-blue">DVWA Sandbox</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">Detection:</span>
+                            <span class="text-cyber-green">Suricata IDS</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">Reduction:</span>
+                            <span class="text-cyber-blue">60% Attack Surface</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-1 bg-cyber-blue bg-opacity-20 text-cyber-blue text-xs rounded">DVWA</span>
+                        <span class="px-2 py-1 bg-cyber-green bg-opacity-20 text-cyber-green text-xs rounded">Suricata</span>
+                        <span class="px-2 py-1 bg-cyber-blue bg-opacity-20 text-cyber-blue text-xs rounded">Penetration Testing</span>
+                        <span class="px-2 py-1 bg-cyber-green bg-opacity-20 text-cyber-green text-xs rounded">Hardening</span>
+                    </div>
+                    
+                    <div class="flex space-x-3">
+                        <button class="flex-1 bg-cyber-green bg-opacity-20 text-cyber-green px-4 py-2 rounded hover:bg-opacity-30 transition-colors">
+                            <i class="fab fa-github mr-2"></i>View Code
+                        </button>
+                        <button class="flex-1 bg-cyber-blue bg-opacity-20 text-cyber-blue px-4 py-2 rounded hover:bg-opacity-30 transition-colors">
+                            <i class="fas fa-file-alt mr-2"></i>Report
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Additional Projects Placeholder -->
+                <!-- @MAP: additionalProjects.map(project => ( -->
+                <div class="project-card rounded-xl p-6 terminal-border opacity-75">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-plus-circle text-gray-500 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-semibold text-gray-400">Future Projects</h3>
+                    </div>
+                    <p class="text-gray-500 mb-4">
+                        Reserved space for upcoming case studies, live demos, and advanced cybersecurity implementations.
+                    </p>
+                    <div class="text-center">
+                        <span class="text-cyber-green text-sm">Coming Soon...</span>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ProjectsSection -->
+
+    <!-- @COMPONENT: SkillsSection -->
+    <section id="skills" class="py-20 bg-gradient-to-b from-black to-darker-gray">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center gradient-text">
+                <i class="fas fa-cogs mr-3"></i>Technical Arsenal
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Networking -->
+                <div class="bg-dark-gray rounded-xl p-6 terminal-border">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-network-wired text-cyber-green text-2xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">Networking</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>TCP/IP</span>
+                                <span class="text-cyber-green">Expert</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Cisco R&S</span>
+                                <span class="text-cyber-blue">Advanced</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="text-sm text-gray-400 space-y-1">
+                            <div>• VPNs & Firewalls</div>
+                            <div>• VLANs & Subnetting</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cybersecurity -->
+                <div class="bg-dark-gray rounded-xl p-6 terminal-border">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-shield-alt text-cyber-blue text-2xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">Cybersecurity</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Threat Detection</span>
+                                <span class="text-cyber-green">Expert</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Incident Response</span>
+                                <span class="text-cyber-blue">Advanced</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="text-sm text-gray-400 space-y-1">
+                            <div>• Vulnerability Mgmt</div>
+                            <div>• Digital Forensics</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cloud -->
+                <div class="bg-dark-gray rounded-xl p-6 terminal-border">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-cloud text-cyber-green text-2xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">Cloud</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>AWS</span>
+                                <span class="text-cyber-green">Advanced</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Azure</span>
+                                <span class="text-cyber-blue">Intermediate</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="text-sm text-gray-400 space-y-1">
+                            <div>• EC2, S3, IAM, VPC</div>
+                            <div>• Security Automation</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tools -->
+                <div class="bg-dark-gray rounded-xl p-6 terminal-border">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-tools text-cyber-blue text-2xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">Tools</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Python</span>
+                                <span class="text-cyber-green">Advanced</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar rounded-full" style="width: 82%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>PowerShell</span>
+                                <span class="text-cyber-blue">Advanced</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar rounded-full" style="width: 78%"></div>
+                            </div>
+                        </div>
+                        <div class="text-sm text-gray-400 space-y-1">
+                            <div>• Nmap, Wireshark</div>
+                            <div>• Splunk, Nessus</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: SkillsSection -->
+
+    <!-- @COMPONENT: CertificationsSection -->
+    <section id="certifications" class="py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center gradient-text">
+                <i class="fas fa-certificate mr-3"></i>Certifications
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- @MAP: certifications.map(cert => ( -->
+                <div class="bg-dark-gray rounded-xl p-6 terminal-border hover:cyber-glow transition-all">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-award text-cyber-green text-xl mr-3"></i>
+                        <span class="font-semibold">CISSP Foundation</span>
+                    </div>
+                    <div class="text-sm text-gray-400">Information Security Foundation</div>
+                </div>
+                
+                <div class="bg-dark-gray rounded-xl p-6 terminal-border hover:cyber-glow transition-all">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-shield-alt text-cyber-blue text-xl mr-3"></i>
+                        <span class="font-semibold">Intro to Cybersecurity</span>
+                    </div>
+                    <div class="text-sm text-gray-400">Cybersecurity & Cybercrime</div>
+                </div>
+                
+                <div class="bg-dark-gray rounded-xl p-6 terminal-border hover:cyber-glow transition-all">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-lock text-cyber-green text-xl mr-3"></i>
+                        <span class="font-semibold">Security Awareness</span>
+                    </div>
+                    <div class="text-sm text-gray-400">Foundational Online Security</div>
+                </div>
+                
+                <div class="bg-dark-gray rounded-xl p-6 terminal-border hover:cyber-glow transition-all">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-network-wired text-cyber-blue text-xl mr-3"></i>
+                        <span class="font-semibold">Cisco Packet Tracer</span>
+                    </div>
+                    <div class="text-sm text-gray-400">Networking Fundamentals</div>
+                </div>
+                
+                <div class="bg-dark-gray rounded-xl p-6 terminal-border hover:cyber-glow transition-all">
+                    <div class="flex items-center mb-3">
+                        <i class="fab fa-python text-cyber-green text-xl mr-3"></i>
+                        <span class="font-semibold">Python Programming</span>
+                    </div>
+                    <div class="text-sm text-gray-400">Programming with Python 3.x</div>
+                </div>
+                
+                <div class="bg-dark-gray rounded-xl p-6 terminal-border border-dashed border-cyber-blue hover:cyber-glow-blue transition-all">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-clock text-cyber-blue text-xl mr-3"></i>
+                        <span class="font-semibold">CompTIA Security+</span>
+                    </div>
+                    <div class="text-sm text-cyber-blue">In Progress</div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: CertificationsSection -->
+
+    <!-- @COMPONENT: ContactSection -->
+    <section id="contact" class="py-20 bg-gradient-to-b from-black to-darker-gray">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center gradient-text">
+                <i class="fas fa-terminal mr-3"></i>Get in Touch
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6 text-cyber-green">Connect With Me</h3>
+                        <p class="text-gray-300 mb-6">
+                            Ready to discuss cybersecurity opportunities or collaborate on innovative projects? Let's connect!
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <a href="mailto:dhrumilrupakar04@gmail.com" class="flex items-center space-x-4 p-4 bg-dark-gray rounded-lg terminal-border hover:cyber-glow transition-all">
+                            <i class="fas fa-envelope text-cyber-green text-xl"></i>
+                            <div>
+                                <div class="font-semibold">Email</div>
+                                <div class="text-sm text-gray-400" data-mock="true">dhrumilrupakar04@gmail.com</div>
+                            </div>
+                        </a>
+                        
+                        <a href="https://www.linkedin.com/in/dhrumilrupakar/" target="_blank" class="flex items-center space-x-4 p-4 bg-dark-gray rounded-lg terminal-border hover:cyber-glow-blue transition-all">
+                            <i class="fab fa-linkedin text-cyber-blue text-xl"></i>
+                            <div>
+                                <div class="font-semibold">LinkedIn</div>
+                                <div class="text-sm text-gray-400">/in/dhrumilrupakar</div>
+                            </div>
+                        </a>
+                        
+                        <a href="https://github.com/dhrumilrupakar" target="_blank" class="flex items-center space-x-4 p-4 bg-dark-gray rounded-lg terminal-border hover:cyber-glow transition-all">
+                            <i class="fab fa-github text-cyber-green text-xl"></i>
+                            <div>
+                                <div class="font-semibold">GitHub</div>
+                                <div class="text-sm text-gray-400">/dhrumilrupakar</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-dark-gray rounded-xl p-6 terminal-border">
+                    <h3 class="text-xl font-semibold mb-6 text-cyber-blue">
+                        <i class="fas fa-paper-plane mr-2"></i>Send Message
+                    </h3>
+                    
+                    <form class="space-y-4" data-implementation="Form submission should be handled with backend integration">
+                        <!-- @STATE: formData: {name: string, email: string, subject: string, message: string} -->
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-gray-300">Name</label>
+                            <input type="text" data-bind="formData.name" class="w-full bg-black border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-cyber-green focus:outline-none transition-colors" placeholder="Your Name" required data-mock="true">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-gray-300">Email</label>
+                            <input type="email" data-bind="formData.email" class="w-full bg-black border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-cyber-green focus:outline-none transition-colors" placeholder="your.email@example.com" required data-mock="true">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-gray-300">Subject</label>
+                            <select data-bind="formData.subject" class="w-full bg-black border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-cyber-green focus:outline-none transition-colors" data-mock="true">
+                                <option value="">Select a topic</option>
+                                <option value="recruitment">Recruitment Opportunity</option>
+                                <option value="collaboration">Project Collaboration</option>
+                                <option value="consultation">Technical Consultation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2 text-gray-300">Message</label>
+                            <textarea data-bind="formData.message" rows="4" class="w-full bg-black border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-cyber-green focus:outline-none transition-colors resize-none" placeholder="Your message..." required data-mock="true"></textarea>
+                        </div>
+                        
+                        <button type="submit" data-event="click:handleSubmit" class="w-full bg-gradient-to-r from-cyber-green to-cyber-blue text-black px-6 py-3 rounded-lg font-semibold hover:scale-105 transition-transform">
+                            <i class="fas fa-send mr-2"></i>Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ContactSection -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-darker-gray py-8 border-t border-gray-800">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://www.linkedin.com/in/dhrumilrupakar/" target="_blank" class="text-gray-400 hover:text-cyber-blue transition-colors">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a href="https://github.com/dhrumilrupakar" target="_blank" class="text-gray-400 hover:text-cyber-green transition-colors">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+                <a href="mailto:dhrumilrupakar04@gmail.com" class="text-gray-400 hover:text-cyber-blue transition-colors">
+                    <i class="fas fa-envelope text-2xl"></i>
+                </a>
+            </div>
+            <p class="text-gray-500 text-sm">
+                &copy; 2025 Dhrumil Rupakar. Securing the digital world, one system at a time.
+            </p>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // TODO: Implement smooth scrolling navigation, form submission handling, and interactive animations
+        (function() {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Intersection Observer for section animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fadeInUp');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Form submission handler placeholder
+            const contactForm = document.querySelector('form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement actual form submission with backend integration
+                    console.log('Form submission intercepted - implement backend integration');
+                });
+            }
+
+            // Dynamic typing effect for hero section (optional enhancement)
+            // TODO: Add typewriter effect for dynamic text display
+        })();
+    </script>
+</body>
+</html>

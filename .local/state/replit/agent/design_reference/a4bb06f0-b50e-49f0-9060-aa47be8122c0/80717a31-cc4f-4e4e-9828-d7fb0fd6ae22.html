@@ -1,0 +1,635 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhrumil Rupakar - Cybersecurity Specialist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'neon-green': '#00FF88',
+                        'bright-green': '#39FF14',
+                        'electric-blue': '#00BFFF',
+                        'cyber-blue': '#0080FF',
+                        'dark-bg': '#000000',
+                        'darker-bg': '#111111',
+                    },
+                    animation: {
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'typewriter': 'typewriter 3s steps(40) 1s 1 normal both',
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 5px #00FF88, 0 0 10px #00FF88, 0 0 15px #00FF88' },
+                            '100%': { boxShadow: '0 0 10px #00FF88, 0 0 20px #00FF88, 0 0 30px #00FF88' }
+                        },
+                        typewriter: {
+                            '0%': { width: '0' },
+                            '100%': { width: '100%' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(45deg, #00FF88, #00BFFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .cyber-border {
+            border: 1px solid transparent;
+            background: linear-gradient(45deg, #00FF88, #00BFFF) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+        }
+        .glow-on-hover {
+            transition: all 0.3s ease;
+        }
+        .glow-on-hover:hover {
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+            transform: translateY(-5px);
+        }
+        .skill-bar {
+            position: relative;
+            overflow: hidden;
+        }
+        .skill-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 2s ease;
+        }
+        .skill-bar.animate::before {
+            left: 100%;
+        }
+        .matrix-bg {
+            background-image: 
+                radial-gradient(circle at 25% 25%, #00FF88 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #00BFFF 0%, transparent 50%);
+            background-size: 100px 100px;
+            background-position: 0 0, 50px 50px;
+            opacity: 0.03;
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-white font-inter overflow-x-hidden">
+    <!-- Matrix Background Effect -->
+    <div class="fixed inset-0 matrix-bg pointer-events-none"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-dark-bg/90 backdrop-blur-sm border-b border-neon-green/20">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-poppins font-bold gradient-text">DR</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-neon-green transition-colors duration-300">Home</a>
+                    <a href="#about" class="hover:text-neon-green transition-colors duration-300">About</a>
+                    <a href="#projects" class="hover:text-neon-green transition-colors duration-300">Projects</a>
+                    <a href="#skills" class="hover:text-neon-green transition-colors duration-300">Skills</a>
+                    <a href="#contact" class="hover:text-neon-green transition-colors duration-300">Contact</a>
+                </div>
+                <button class="md:hidden text-neon-green">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-dark-bg via-darker-bg to-dark-bg"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="animate-float">
+                <h1 class="text-6xl md:text-8xl font-poppins font-bold mb-6">
+                    <span class="gradient-text">Dhrumil Rupakar</span>
+                </h1>
+                <div class="text-2xl md:text-4xl font-poppins font-medium mb-8 overflow-hidden">
+                    <span class="inline-block animate-typewriter">Cybersecurity | Networking | Cloud</span>
+                </div>
+                <p class="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+                    Building secure systems, detecting threats, and optimizing cloud infrastructure for a safer digital world.
+                </p>
+                <button class="bg-gradient-to-r from-neon-green to-electric-blue text-dark-bg px-8 py-4 rounded-lg font-poppins font-semibold text-lg hover:scale-105 transition-transform duration-300 animate-glow">
+                    View My Work
+                </button>
+            </div>
+        </div>
+        
+        <!-- Animated Elements -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-neon-green text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-poppins font-bold text-center mb-16 gradient-text">About Me</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                <div class="relative">
+                    <!-- Professional photo from provided image -->
+                    <div class="relative w-80 h-80 mx-auto">
+                        <div class="absolute inset-0 bg-gradient-to-br from-neon-green to-electric-blue rounded-2xl blur-xl opacity-30"></div>
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" 
+                             alt="Dhrumil Rupakar - Cybersecurity Professional" 
+                             data-mock-image="true" 
+                             data-implementation="Replace with provided professional photo"
+                             class="relative w-full h-full object-cover rounded-2xl border-2 border-neon-green/30 glow-on-hover" />
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        I'm an Information Technology student at <span class="text-neon-green font-semibold">Seneca Polytechnic</span> with hands-on experience in threat detection, incident response, vulnerability management, and cloud infrastructure.
+                    </p>
+                    
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        I have built enterprise-level homelabs, deployed secure network architectures, and worked on real-world simulations of cyberattacks. I thrive in solving complex technical challenges and continuously expanding my skills in cybersecurity, cloud computing, and networking.
+                    </p>
+                    
+                    <!-- Key Achievements -->
+                    <div class="bg-darker-bg/50 p-6 rounded-xl border border-neon-green/20">
+                        <h3 class="text-xl font-poppins font-semibold text-neon-green mb-4">Key Achievements</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-trophy text-electric-blue mr-3"></i>
+                                <span>President's Honor List x2 (Summer 2024, Winter 2025)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-shield-alt text-neon-green mr-3"></i>
+                                <span>Cybersecurity Virtual Experience at Mastercard</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-cloud text-electric-blue mr-3"></i>
+                                <span>AWS & Azure cloud solutions implementation</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-darker-bg/30">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-poppins font-bold text-center mb-16 gradient-text">Projects</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Project 1 -->
+                <div class="bg-darker-bg/50 p-8 rounded-2xl border border-neon-green/20 glow-on-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-server text-neon-green text-2xl mr-4"></i>
+                        <h3 class="text-2xl font-poppins font-semibold">Cybersecurity Homelab</h3>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Designed and deployed an enterprise-like virtual environment with Windows Server, Kali Linux, and Ubuntu to simulate real-world cyber threats and defenses.
+                    </p>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-400">Networks Segmented</span>
+                            <span class="text-neon-green font-semibold">Multiple VLANs</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-400">Daily Log Monitoring</span>
+                            <span class="text-electric-blue font-semibold">10K+ Logs</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-400">Vulnerability Scans</span>
+                            <span class="text-neon-green font-semibold">50+ Nessus Scans</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-400">Critical Findings Closed</span>
+                            <span class="text-electric-blue font-semibold">90%</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-neon-green/20 text-neon-green rounded-full text-sm">pfSense</span>
+                        <span class="px-3 py-1 bg-electric-blue/20 text-electric-blue rounded-full text-sm">Splunk</span>
+                        <span class="px-3 py-1 bg-neon-green/20 text-neon-green rounded-full text-sm">Nessus</span>
+                        <span class="px-3 py-1 bg-electric-blue/20 text-electric-blue rounded-full text-sm">VMware</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-darker-bg/50 p-8 rounded-2xl border border-electric-blue/20 glow-on-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-bug text-electric-blue text-2xl mr-4"></i>
+                        <h3 class="text-2xl font-poppins font-semibold">RFI to RCE Attack Simulation</h3>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Executed a controlled RFI-to-RCE exploit in DVWA within a sandboxed Linux-Windows environment using real-time threat detection.
+                    </p>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-400">Environment</span>
+                            <span class="text-neon-green font-semibold">Sandboxed Multi-OS</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-400">Detection System</span>
+                            <span class="text-electric-blue font-semibold">Suricata IDS</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-400">Attack Surface Reduction</span>
+                            <span class="text-neon-green font-semibold">60%</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-electric-blue/20 text-electric-blue rounded-full text-sm">DVWA</span>
+                        <span class="px-3 py-1 bg-neon-green/20 text-neon-green rounded-full text-sm">Suricata</span>
+                        <span class="px-3 py-1 bg-electric-blue/20 text-electric-blue rounded-full text-sm">Linux</span>
+                        <span class="px-3 py-1 bg-neon-green/20 text-neon-green rounded-full text-sm">Pentesting</span>
+                    </div>
+                </div>
+
+                <!-- Additional Projects Placeholder -->
+                <div class="bg-darker-bg/30 p-8 rounded-2xl border border-gray-600/20 col-span-full">
+                    <div class="text-center">
+                        <i class="fas fa-plus-circle text-gray-500 text-4xl mb-4"></i>
+                        <h3 class="text-xl font-poppins font-semibold text-gray-500 mb-2">More Projects Coming Soon</h3>
+                        <p class="text-gray-400">Reserved space for future case studies and live demos, with project images and GitHub links.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-poppins font-bold text-center mb-16 gradient-text">Technical Arsenal</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <!-- Networking Skills -->
+                <div class="bg-darker-bg/50 p-6 rounded-2xl border border-neon-green/20">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-network-wired text-neon-green text-2xl mr-3"></i>
+                        <h3 class="text-xl font-poppins font-semibold">Networking</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm">TCP/IP</span>
+                                <span class="text-sm text-neon-green">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-neon-green to-electric-blue h-2 rounded-full skill-bar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm">Cisco R&S</span>
+                                <span class="text-sm text-electric-blue">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-electric-blue to-neon-green h-2 rounded-full skill-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm">VPN/Firewalls</span>
+                                <span class="text-sm text-neon-green">88%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-neon-green to-electric-blue h-2 rounded-full skill-bar" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cybersecurity Skills -->
+                <div class="bg-darker-bg/50 p-6 rounded-2xl border border-electric-blue/20">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-shield-alt text-electric-blue text-2xl mr-3"></i>
+                        <h3 class="text-xl font-poppins font-semibold">Cybersecurity</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm">Threat Detection</span>
+                                <span class="text-sm text-electric-blue">92%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-electric-blue to-neon-green h-2 rounded-full skill-bar" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm">Incident Response</span>
+                                <span class="text-sm text-neon-green">87%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-neon-green to-electric-blue h-2 rounded-full skill-bar" style="width: 87%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm">Vuln Management</span>
+                                <span class="text-sm text-electric-blue">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-electric-blue to-neon-green h-2 rounded-full skill-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cloud Skills -->
+                <div class="bg-darker-bg/50 p-6 rounded-2xl border border-neon-green/20">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-cloud text-neon-green text-2xl mr-3"></i>
+                        <h3 class="text-xl font-poppins font-semibold">Cloud Platforms</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm">AWS</span>
+                                <span class="text-sm text-neon-green">89%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-neon-green to-electric-blue h-2 rounded-full skill-bar" style="width: 89%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm">Azure</span>
+                                <span class="text-sm text-electric-blue">84%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-electric-blue to-neon-green h-2 rounded-full skill-bar" style="width: 84%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm">Security Automation</span>
+                                <span class="text-sm text-neon-green">82%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-neon-green to-electric-blue h-2 rounded-full skill-bar" style="width: 82%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Programming -->
+                <div class="bg-darker-bg/50 p-6 rounded-2xl border border-electric-blue/20">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-tools text-electric-blue text-2xl mr-3"></i>
+                        <h3 class="text-xl font-poppins font-semibold">Tools & Languages</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm">Python</span>
+                                <span class="text-sm text-electric-blue">91%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-electric-blue to-neon-green h-2 rounded-full skill-bar" style="width: 91%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm">Bash/PowerShell</span>
+                                <span class="text-sm text-neon-green">88%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-neon-green to-electric-blue h-2 rounded-full skill-bar" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm">Wireshark/Nmap</span>
+                                <span class="text-sm text-electric-blue">93%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-electric-blue to-neon-green h-2 rounded-full skill-bar" style="width: 93%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-darker-bg/30">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-poppins font-bold text-center mb-16 gradient-text">Certifications</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="bg-darker-bg/50 p-6 rounded-xl border border-neon-green/20 glow-on-hover">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-certificate text-neon-green text-lg mr-3"></i>
+                        <h3 class="font-poppins font-semibold">CISSP Foundation</h3>
+                    </div>
+                </div>
+                
+                <div class="bg-darker-bg/50 p-6 rounded-xl border border-electric-blue/20 glow-on-hover">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-shield-alt text-electric-blue text-lg mr-3"></i>
+                        <h3 class="font-poppins font-semibold">Cybersecurity & Cybercrime</h3>
+                    </div>
+                </div>
+                
+                <div class="bg-darker-bg/50 p-6 rounded-xl border border-neon-green/20 glow-on-hover">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-lock text-neon-green text-lg mr-3"></i>
+                        <h3 class="font-poppins font-semibold">Security Awareness</h3>
+                    </div>
+                </div>
+                
+                <div class="bg-darker-bg/50 p-6 rounded-xl border border-electric-blue/20 glow-on-hover">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-network-wired text-electric-blue text-lg mr-3"></i>
+                        <h3 class="font-poppins font-semibold">Cisco Packet Tracer</h3>
+                    </div>
+                </div>
+                
+                <div class="bg-darker-bg/50 p-6 rounded-xl border border-neon-green/20 glow-on-hover">
+                    <div class="flex items-center mb-3">
+                        <i class="fab fa-python text-neon-green text-lg mr-3"></i>
+                        <h3 class="font-poppins font-semibold">Python Programming 3.x</h3>
+                    </div>
+                </div>
+                
+                <div class="bg-darker-bg/50 p-6 rounded-xl border border-amber-500/20 glow-on-hover">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-hourglass-half text-amber-500 text-lg mr-3"></i>
+                        <h3 class="font-poppins font-semibold">CompTIA Security+</h3>
+                    </div>
+                    <span class="text-sm text-amber-500">In Progress</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-poppins font-bold text-center mb-16 gradient-text">Get In Touch</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-poppins font-semibold mb-6 text-neon-green">Let's Connect</h3>
+                        <p class="text-gray-300 mb-8 leading-relaxed">
+                            I'm always open to discussing cybersecurity opportunities, networking projects, or cloud computing innovations. Feel free to reach out!
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <a href="mailto:dhrumilrupakar04@gmail.com" class="flex items-center p-4 bg-darker-bg/50 rounded-xl border border-neon-green/20 hover:border-neon-green/50 transition-colors group">
+                            <i class="fas fa-envelope text-neon-green text-xl mr-4 group-hover:scale-110 transition-transform"></i>
+                            <div>
+                                <div class="font-semibold">Email</div>
+                                <div class="text-gray-400">dhrumilrupakar04@gmail.com</div>
+                            </div>
+                        </a>
+                        
+                        <a href="https://www.linkedin.com/in/dhrumilrupakar/" target="_blank" class="flex items-center p-4 bg-darker-bg/50 rounded-xl border border-electric-blue/20 hover:border-electric-blue/50 transition-colors group">
+                            <i class="fab fa-linkedin text-electric-blue text-xl mr-4 group-hover:scale-110 transition-transform"></i>
+                            <div>
+                                <div class="font-semibold">LinkedIn</div>
+                                <div class="text-gray-400">linkedin.com/in/dhrumilrupakar</div>
+                            </div>
+                        </a>
+                        
+                        <a href="https://github.com/dhrumilrupakar" target="_blank" class="flex items-center p-4 bg-darker-bg/50 rounded-xl border border-neon-green/20 hover:border-neon-green/50 transition-colors group">
+                            <i class="fab fa-github text-neon-green text-xl mr-4 group-hover:scale-110 transition-transform"></i>
+                            <div>
+                                <div class="font-semibold">GitHub</div>
+                                <div class="text-gray-400">github.com/dhrumilrupakar</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-darker-bg/50 p-8 rounded-2xl border border-neon-green/20">
+                    <form class="space-y-6" data-implementation="Implement form submission with validation">
+                        <div>
+                            <label for="name" class="block text-sm font-medium mb-2">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 bg-dark-bg border border-gray-600 rounded-lg focus:border-neon-green focus:outline-none transition-colors" placeholder="Your Name">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 bg-dark-bg border border-gray-600 rounded-lg focus:border-neon-green focus:outline-none transition-colors" placeholder="your.email@example.com">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 bg-dark-bg border border-gray-600 rounded-lg focus:border-neon-green focus:outline-none transition-colors" placeholder="Subject">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 bg-dark-bg border border-gray-600 rounded-lg focus:border-neon-green focus:outline-none transition-colors resize-none" placeholder="Your message..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-gradient-to-r from-neon-green to-electric-blue text-dark-bg py-3 rounded-lg font-poppins font-semibold hover:scale-105 transition-transform duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-neon-green/20 bg-darker-bg/50">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400">&copy; 2024 Dhrumil Rupakar. Securing the digital frontier, one line of code at a time.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll functionality
+        (() => {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Animate skill bars on scroll
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const skillBars = entry.target.querySelectorAll('.skill-bar');
+                        skillBars.forEach((bar, index) => {
+                            setTimeout(() => {
+                                bar.classList.add('animate');
+                            }, index * 200);
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            const skillsSection = document.querySelector('#skills');
+            if (skillsSection) {
+                observer.observe(skillsSection);
+            }
+
+            // Add glow effect to navigation on scroll
+            let lastScrollY = window.scrollY;
+            window.addEventListener('scroll', () => {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 100) {
+                    nav.classList.add('backdrop-blur-md');
+                } else {
+                    nav.classList.remove('backdrop-blur-md');
+                }
+                lastScrollY = window.scrollY;
+            });
+
+            // Form submission placeholder
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    // TODO: Implement form submission logic
+                    alert('Form submission functionality to be implemented');
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

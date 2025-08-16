@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhrumil Rupakar - Cybersecurity Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cyber-green': '#00FF41',
+                        'cyber-blue': '#00D4FF',
+                        'dark-bg': '#000000',
+                        'dark-card': '#111111',
+                        'dark-border': '#1a1a1a'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'float': 'float 3s ease-in-out infinite',
+                        'typing': 'typing 3.5s steps(40, end), blink-caret .75s step-end infinite'
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 5px #00FF41, 0 0 10px #00FF41, 0 0 15px #00FF41' },
+                            '100%': { boxShadow: '0 0 10px #00FF41, 0 0 20px #00FF41, 0 0 30px #00FF41' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        typing: {
+                            '0%': { width: '0' },
+                            '100%': { width: '100%' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .gradient-text {
+            background: linear-gradient(45deg, #00FF41, #00D4FF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .cyber-border {
+            border: 1px solid;
+            border-image: linear-gradient(45deg, #00FF41, #00D4FF, #00FF41) 1;
+        }
+        
+        .hover-glow:hover {
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3), 0 0 40px rgba(0, 212, 255, 0.2);
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        
+        .terminal-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #00FF41, #00D4FF, transparent);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .skill-bar {
+            background: linear-gradient(90deg, #00FF41, #00D4FF);
+            height: 4px;
+            transition: width 2s ease-in-out;
+        }
+        
+        .project-card {
+            background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            border-color: #00FF41;
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 255, 65, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-dark-bg text-white font-poppins">
+    <!-- @COMPONENT: Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-dark-bg/90 backdrop-blur-sm border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold gradient-text">DR</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-cyber-green transition-colors duration-300">Home</a>
+                    <a href="#about" class="hover:text-cyber-green transition-colors duration-300">About</a>
+                    <a href="#projects" class="hover:text-cyber-green transition-colors duration-300">Projects</a>
+                    <a href="#skills" class="hover:text-cyber-green transition-colors duration-300">Skills</a>
+                    <a href="#contact" class="hover:text-cyber-green transition-colors duration-300">Contact</a>
+                </div>
+                <button class="md:hidden text-cyber-green">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-to-br from-cyber-green/5 via-transparent to-cyber-blue/5"></div>
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-cyber-green/10 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyber-blue/10 rounded-full blur-3xl animate-float" style="animation-delay: 1s;"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-glow">
+                <span class="gradient-text">Dhrumil Rupakar</span>
+            </h1>
+            <div class="text-xl md:text-2xl mb-4 text-gray-300">
+                <span class="terminal-cursor">Cybersecurity | Networking | Cloud</span>
+            </div>
+            <p class="text-lg md:text-xl max-w-4xl mx-auto mb-8 text-gray-400 leading-relaxed">
+                Building secure systems, detecting threats, and optimizing cloud infrastructure for a safer digital world.
+            </p>
+            <button class="bg-gradient-to-r from-cyber-green to-cyber-blue text-black px-8 py-4 rounded-lg font-semibold text-lg hover:scale-105 transition-transform duration-300 hover-glow">
+                <a href="#projects">View My Work</a>
+            </button>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-cyber-green text-2xl"></i>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <div class="section-divider"></div>
+
+    <!-- @COMPONENT: About Section -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">About Me</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-lg leading-relaxed mb-8 text-gray-300">
+                        I'm an Information Technology student at <span class="text-cyber-green">Seneca Polytechnic</span> with hands-on experience in threat detection, incident response, vulnerability management, and cloud infrastructure. I have built enterprise-level homelabs, deployed secure network architectures, and worked on real-world simulations of cyberattacks.
+                    </p>
+                    <p class="text-lg leading-relaxed text-gray-300">
+                        I thrive in solving complex technical challenges and continuously expanding my skills in cybersecurity, cloud computing, and networking.
+                    </p>
+                </div>
+                
+                <div class="bg-dark-card p-8 rounded-lg cyber-border">
+                    <h3 class="text-2xl font-semibold mb-6 gradient-text">Key Achievements</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-trophy text-cyber-green"></i>
+                            <span>President's Honor List x2 (Summer 2024, Winter 2025)</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-shield-alt text-cyber-blue"></i>
+                            <span>Cybersecurity Virtual Experience at Mastercard</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-cloud text-cyber-green"></i>
+                            <span>AWS & Azure cloud solutions implementation</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-robot text-cyber-blue"></i>
+                            <span>Security automation and infrastructure optimization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About Section -->
+
+    <div class="section-divider"></div>
+
+    <!-- @COMPONENT: Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Featured Projects</h2>
+            
+            <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                <!-- Project 1 -->
+                <div class="project-card p-8 rounded-lg hover-glow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-server text-cyber-green text-2xl mr-3"></i>
+                        <h3 class="text-2xl font-semibold">Cybersecurity Homelab Project</h3>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Designed and deployed an enterprise-like virtual environment with Windows Server, Kali Linux, and Ubuntu to simulate real-world cyber threats and defenses. Implemented pfSense firewall, VPN, and ACLs across multiple segmented networks.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="bg-dark-bg p-3 rounded">
+                            <span class="text-cyber-green font-semibold">10K+</span>
+                            <p class="text-sm text-gray-400">Daily Logs Monitored</p>
+                        </div>
+                        <div class="bg-dark-bg p-3 rounded">
+                            <span class="text-cyber-blue font-semibold">50+</span>
+                            <p class="text-sm text-gray-400">Vulnerability Scans</p>
+                        </div>
+                        <div class="bg-dark-bg p-3 rounded">
+                            <span class="text-cyber-green font-semibold">90%</span>
+                            <p class="text-sm text-gray-400">Critical Findings Closed</p>
+                        </div>
+                        <div class="bg-dark-bg p-3 rounded">
+                            <span class="text-cyber-blue font-semibold">Splunk</span>
+                            <p class="text-sm text-gray-400">SIEM Integration</p>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <button class="text-cyber-green hover:text-white transition-colors">
+                            <i class="fab fa-github mr-2"></i>View Code
+                        </button>
+                        <button class="text-cyber-blue hover:text-white transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card p-8 rounded-lg hover-glow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-bug text-cyber-blue text-2xl mr-3"></i>
+                        <h3 class="text-2xl font-semibold">RFI-to-RCE Attack Simulation</h3>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Executed a controlled Remote File Inclusion to Remote Code Execution exploit in DVWA within a sandboxed Linux-Windows environment. Used Suricata IDS for real-time attack pattern detection.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="bg-dark-bg p-3 rounded">
+                            <span class="text-cyber-blue font-semibold">DVWA</span>
+                            <p class="text-sm text-gray-400">Testing Environment</p>
+                        </div>
+                        <div class="bg-dark-bg p-3 rounded">
+                            <span class="text-cyber-green font-semibold">Real-time</span>
+                            <p class="text-sm text-gray-400">Threat Detection</p>
+                        </div>
+                        <div class="bg-dark-bg p-3 rounded">
+                            <span class="text-cyber-blue font-semibold">60%</span>
+                            <p class="text-sm text-gray-400">Attack Surface Reduced</p>
+                        </div>
+                        <div class="bg-dark-bg p-3 rounded">
+                            <span class="text-cyber-green font-semibold">Suricata</span>
+                            <p class="text-sm text-gray-400">IDS Implementation</p>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <button class="text-cyber-green hover:text-white transition-colors">
+                            <i class="fab fa-github mr-2"></i>View Code
+                        </button>
+                        <button class="text-cyber-blue hover:text-white transition-colors">
+                            <i class="fas fa-file-alt mr-2"></i>Case Study
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Projects Placeholder -->
+            <div class="text-center">
+                <div class="bg-dark-card p-8 rounded-lg cyber-border inline-block">
+                    <i class="fas fa-plus-circle text-4xl text-cyber-green mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">More Projects Coming Soon</h3>
+                    <p class="text-gray-400">Additional case studies and live demos in development</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Projects Section -->
+
+    <div class="section-divider"></div>
+
+    <!-- @COMPONENT: Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Technical Arsenal</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Networking -->
+                <div class="bg-dark-card p-6 rounded-lg cyber-border hover-glow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-network-wired text-cyber-green text-2xl mr-3"></i>
+                        <h3 class="text-xl font-semibold">Networking</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <span class="text-sm text-gray-300">TCP/IP</span>
+                            <div class="bg-gray-700 h-2 rounded mt-1">
+                                <div class="skill-bar rounded" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-sm text-gray-300">Cisco Routing & Switching</span>
+                            <div class="bg-gray-700 h-2 rounded mt-1">
+                                <div class="skill-bar rounded" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-sm text-gray-300">VPNs & Firewalls</span>
+                            <div class="bg-gray-700 h-2 rounded mt-1">
+                                <div class="skill-bar rounded" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-sm text-gray-300">VLANs</span>
+                            <div class="bg-gray-700 h-2 rounded mt-1">
+                                <div class="skill-bar rounded" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cybersecurity -->
+                <div class="bg-dark-card p-6 rounded-lg cyber-border hover-glow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-shield-alt text-cyber-blue text-2xl mr-3"></i>
+                        <h3 class="text-xl font-semibold">Cybersecurity</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <span class="text-sm text-gray-300">Threat Detection</span>
+                            <div class="bg-gray-700 h-2 rounded mt-1">
+                                <div class="skill-bar rounded" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-sm text-gray-300">Incident Response</span>
+                            <div class="bg-gray-700 h-2 rounded mt-1">
+                                <div class="skill-bar rounded" style="width: 82%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-sm text-gray-300">Vulnerability Management</span>
+                            <div class="bg-gray-700 h-2 rounded mt-1">
+                                <div class="skill-bar rounded" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-sm text-gray-300">Digital Forensics</span>
+                            <div class="bg-gray-700 h-2 rounded mt-1">
+                                <div class="skill-bar rounded" style="width: 78%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cloud -->
+                <div class="bg-dark-card p-6 rounded-lg cyber-border hover-glow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-cloud text-cyber-green text-2xl mr-3"></i>
+                        <h3 class="text-xl font-semibold">Cloud</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="skill-item">
+                            <span class="text-sm text-gray-300">AWS (EC2, S3, IAM, VPC)</span>
+                            <div class="bg-gray-700 h-2 rounded mt-1">
+                                <div class="skill-bar rounded" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-sm text-gray-300">Azure (VMs, SQL, Governance)</span>
+                            <div class="bg-gray-700 h-2 rounded mt-1">
+                                <div class="skill-bar rounded" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="text-sm text-gray-300">Security Automation</span>
+                            <div class="bg-gray-700 h-2 rounded mt-1">
+                                <div class="skill-bar rounded" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="bg-dark-card p-6 rounded-lg cyber-border hover-glow">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-tools text-cyber-blue text-2xl mr-3"></i>
+                        <h3 class="text-xl font-semibold">Tools & Languages</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <div class="flex items-center">
+                            <i class="fas fa-terminal text-cyber-green mr-2"></i>
+                            <span>Bash, PowerShell, Python</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-search text-cyber-blue mr-2"></i>
+                            <span>Nmap, Wireshark</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-chart-line text-cyber-green mr-2"></i>
+                            <span>Splunk, Nessus</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-desktop text-cyber-blue mr-2"></i>
+                            <span>VMware, VirtualBox</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Skills Section -->
+
+    <div class="section-divider"></div>
+
+    <!-- @COMPONENT: Certifications Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Certifications & Training</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-dark-card p-6 rounded-lg cyber-border hover-glow text-center">
+                    <i class="fas fa-certificate text-cyber-green text-3xl mb-4"></i>
+                    <h3 class="font-semibold mb-2">CISSP Foundation</h3>
+                    <p class="text-sm text-gray-400">Security & Risk Management</p>
+                </div>
+                
+                <div class="bg-dark-card p-6 rounded-lg cyber-border hover-glow text-center">
+                    <i class="fas fa-user-secret text-cyber-blue text-3xl mb-4"></i>
+                    <h3 class="font-semibold mb-2">Introduction to Cybersecurity & Cybercrime</h3>
+                    <p class="text-sm text-gray-400">Threat Landscape & Defense</p>
+                </div>
+                
+                <div class="bg-dark-card p-6 rounded-lg cyber-border hover-glow text-center">
+                    <i class="fas fa-shield-alt text-cyber-green text-3xl mb-4"></i>
+                    <h3 class="font-semibold mb-2">Foundational Online Security Awareness</h3>
+                    <p class="text-sm text-gray-400">Security Best Practices</p>
+                </div>
+                
+                <div class="bg-dark-card p-6 rounded-lg cyber-border hover-glow text-center">
+                    <i class="fas fa-network-wired text-cyber-blue text-3xl mb-4"></i>
+                    <h3 class="font-semibold mb-2">Cisco Packet Tracer Networking</h3>
+                    <p class="text-sm text-gray-400">Network Simulation & Design</p>
+                </div>
+                
+                <div class="bg-dark-card p-6 rounded-lg cyber-border hover-glow text-center">
+                    <i class="fab fa-python text-cyber-green text-3xl mb-4"></i>
+                    <h3 class="font-semibold mb-2">Programming with Python 3.x</h3>
+                    <p class="text-sm text-gray-400">Automation & Scripting</p>
+                </div>
+                
+                <div class="bg-dark-card p-6 rounded-lg cyber-border hover-glow text-center">
+                    <i class="fas fa-clock text-cyber-blue text-3xl mb-4"></i>
+                    <h3 class="font-semibold mb-2">CompTIA Security+</h3>
+                    <p class="text-sm text-gray-400">In Progress - 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- @COMPONENT: Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Get In Touch</h2>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Let's Connect</h3>
+                    <p class="text-gray-300 mb-8 leading-relaxed">
+                        Ready to discuss cybersecurity challenges, networking solutions, or cloud infrastructure? I'm always interested in connecting with fellow professionals and exploring new opportunities.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-envelope text-cyber-green text-xl"></i>
+                            <a href="mailto:dhrumilrupakar04@gmail.com" class="hover:text-cyber-green transition-colors">
+                                dhrumilrupakar04@gmail.com
+                            </a>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <i class="fab fa-linkedin text-cyber-blue text-xl"></i>
+                            <a href="https://www.linkedin.com/in/dhrumilrupakar/" target="_blank" class="hover:text-cyber-blue transition-colors">
+                                linkedin.com/in/dhrumilrupakar
+                            </a>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <i class="fab fa-github text-cyber-green text-xl"></i>
+                            <a href="https://github.com/dhrumilrupakar" target="_blank" class="hover:text-cyber-green transition-colors">
+                                github.com/dhrumilrupakar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-dark-card p-8 rounded-lg cyber-border">
+                    <form class="space-y-6" data-mock="true">
+                        <!-- TODO: Implement form submission logic -->
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-cyber-green">Name</label>
+                            <input type="text" class="w-full bg-dark-bg border border-gray-600 rounded px-4 py-3 text-white focus:border-cyber-green focus:outline-none transition-colors" placeholder="Your name">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-cyber-blue">Email</label>
+                            <input type="email" class="w-full bg-dark-bg border border-gray-600 rounded px-4 py-3 text-white focus:border-cyber-blue focus:outline-none transition-colors" placeholder="your.email@example.com">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-cyber-green">Subject</label>
+                            <input type="text" class="w-full bg-dark-bg border border-gray-600 rounded px-4 py-3 text-white focus:border-cyber-green focus:outline-none transition-colors" placeholder="Project discussion, collaboration opportunity, etc.">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-cyber-blue">Message</label>
+                            <textarea rows="5" class="w-full bg-dark-bg border border-gray-600 rounded px-4 py-3 text-white focus:border-cyber-blue focus:outline-none transition-colors resize-none" placeholder="Tell me about your project or opportunity..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-gradient-to-r from-cyber-green to-cyber-blue text-black py-3 rounded font-semibold hover:scale-105 transition-transform duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact Section -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="border-t border-gray-800 py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <p class="text-gray-400">© 2024 Dhrumil Rupakar. All rights reserved.</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="https://www.linkedin.com/in/dhrumilrupakar/" target="_blank" class="text-gray-400 hover:text-cyber-blue transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://github.com/dhrumilrupakar" target="_blank" class="text-gray-400 hover:text-cyber-green transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="mailto:dhrumilrupakar04@gmail.com" class="text-gray-400 hover:text-cyber-blue transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        (function() {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Animate skill bars when section comes into view
+            const observeSkills = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const skillBars = entry.target.querySelectorAll('.skill-bar');
+                        skillBars.forEach(bar => {
+                            bar.style.width = bar.style.width; // Trigger animation
+                        });
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            const skillsSection = document.getElementById('skills');
+            if (skillsSection) {
+                observeSkills.observe(skillsSection);
+            }
+
+            // Add active navigation highlighting
+            window.addEventListener('scroll', () => {
+                const sections = ['home', 'about', 'projects', 'skills', 'contact'];
+                const current = sections.find(section => {
+                    const element = document.getElementById(section);
+                    if (element) {
+                        const rect = element.getBoundingClientRect();
+                        return rect.top <= 100 && rect.bottom >= 100;
+                    }
+                    return false;
+                });
+
+                document.querySelectorAll('nav a').forEach(link => {
+                    link.classList.remove('text-cyber-green');
+                    if (current && link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('text-cyber-green');
+                    }
+                });
+            });
+
+            // TODO: Implement form submission logic
+            // TODO: Add loading states for form submission
+            // TODO: Add form validation
+        })();
+    </script>
+</body>
+</html>

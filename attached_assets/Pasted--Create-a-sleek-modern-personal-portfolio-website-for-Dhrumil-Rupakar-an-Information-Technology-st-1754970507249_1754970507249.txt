@@ -1,0 +1,76 @@
+"Create a sleek, modern personal portfolio website for Dhrumil Rupakar, an Information Technology student specializing in Cybersecurity, Networking, and Cloud Computing (AWS & Azure).
+
+Theme & Style:
+
+Hacker/cybersecurity aesthetic with black background and neon green + electric blue gradient accents.
+
+Smooth animations, clean lines, and futuristic typography (Poppins or Montserrat).
+
+Professional, mobile-responsive design that appeals to recruiters and tech professionals.
+
+Homepage:
+
+Hero section with large name and tagline:
+"Dhrumil Rupakar – Cybersecurity | Networking | Cloud"
+
+Subtext: "Building secure systems, detecting threats, and optimizing cloud infrastructure for a safer digital world."
+
+Call-to-action button: “View My Work”.
+
+About Me Section:
+"I’m an Information Technology student at Seneca Polytechnic with hands-on experience in threat detection, incident response, vulnerability management, and cloud infrastructure. I have built enterprise-level homelabs, deployed secure network architectures, and worked on real-world simulations of cyberattacks. I thrive in solving complex technical challenges and continuously expanding my skills in cybersecurity, cloud computing, and networking."
+
+Key Achievements:
+
+President’s Honor List x2 (Summer 2024, Winter 2025).
+
+Cybersecurity Virtual Experience at Mastercard.
+
+AWS & Azure cloud solutions implementation and security automation.
+
+Projects Section:
+
+Cybersecurity Homelab Project
+Designed and deployed an enterprise-like virtual environment with Windows Server, Kali Linux, and Ubuntu to simulate real-world cyber threats and defenses. Implemented pfSense firewall, VPN, and ACLs across multiple segmented networks, integrated Splunk for monitoring 10K+ logs daily, and conducted over 50 Nessus vulnerability scans, closing 90% of critical findings.
+
+Remote File Inclusion to Remote Code Execution Attack Simulation
+Executed a controlled RFI-to-RCE exploit in DVWA within a sandboxed Linux-Windows environment. Used Suricata IDS to detect attack patterns in real time and applied hardening strategies that reduced the simulated attack surface by 60%.
+
+Additional Projects (Placeholder)
+Reserved space for future case studies and live demos, with project images and GitHub links.
+
+Skills Section:
+
+Networking: TCP/IP, Cisco Routing & Switching, VPNs, Firewalls, VLANs.
+
+Cybersecurity: Threat Detection, Incident Response, Vulnerability Management, Digital Forensics.
+
+Cloud: AWS (EC2, S3, IAM, VPC), Azure (VMs, SQL, Governance, Security Automation).
+
+Tools: Bash, PowerShell, Python, Nmap, Wireshark, Splunk, Nessus, VMware, VirtualBox.
+
+Certifications Section:
+
+CISSP Foundation.
+
+Introduction to Cybersecurity & Cybercrime.
+
+Foundational Online Security Awareness.
+
+Cisco Packet Tracer Networking.
+
+Programming with Python 3.x.
+
+CompTIA Security+ (in progress).
+
+Contact Section:
+
+Email: dhrumilrupakar04@gmail.com
+
+LinkedIn: https://www.linkedin.com/in/dhrumilrupakar/
+
+GitHub: https://github.com/dhrumilrupakar
+
+Simple contact form for recruiters.
+
+Design the overall layout like a modern cybersecurity dashboard with a dark background and glowing gradient highlights, section transitions, and interactive hover effects on project cards."
